@@ -1,0 +1,34 @@
+{
+  "basicInfo": {
+    "fullName" : "Test Name",
+    "education": "Cuak University",
+    "password" : "12345678",
+    "rePassword": "12345678"
+  },
+  "validMentee": {
+    "phone": "62822099848383",
+    "mail": "mentee_123@mail.com"
+  },
+  "currentExp": {
+    "companyName": "Startup",
+    "roleName": "QA Intern"
+  },
+  "validDate": {
+    "startDate": "122024",
+    "endDate": "122025"
+  },
+  "invalidDate": {
+    "startDate": "132024",
+    "endDate": "152025"
+  },
+  "invalidData": {
+    "invalidMail": "123abcd.com",
+    "invalidPhone": "6278",
+    "shortPassword": "1234",
+    "invalidRePassword": "123456789" 
+  },
+  "dummyAccount": {
+    "email": "test_dummya1b2@mail.com",
+    "password": "test_dummya1b2"
+  }
+}
