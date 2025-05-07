@@ -39,13 +39,13 @@ describe("Mentee registration flow", () => {
       cy.get('#email').type(user.validMentee.mail);
     });
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=3');    
+    cy.url().should('include', '/onboarding?step=3');    
     // Make sure "Selanjutnya" button is disabled
     cy.get('.order-1').should('be.disabled');
     // Skip input cv
     cy.get('.mt-4').click();
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=4');
+    cy.url().should('include', '/onboarding?step=4');
 
     cy.fixture('users').then((user) => {
       cy.get('#startDate').type(user.invalidDate.startDate);
@@ -65,18 +65,18 @@ describe("Mentee registration flow", () => {
       cy.get('#email').type(user.validMentee.mail);
     });
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=3');    
+    cy.url().should('include', '/onboarding?step=3');    
     // Make sure "Selanjutnya" button is disabled
     cy.get('.order-1').should('be.disabled');
     // Skip input cv
     cy.get('.mt-4').click();
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=4');
+    cy.url().should('include', '/onboarding?step=4');
 
     // Input current exp
     cy.fillCurrentExpInfoMentee();
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=5');
+    cy.url().should('include', '/onboarding?step=5');
     // Input Mentee Specialization
     cy.addMenteeSpecialization();
 
@@ -101,18 +101,18 @@ describe("Mentee registration flow", () => {
       cy.get('#email').type(user.validMentee.mail);
     });
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=3');    
+    cy.url().should('include', '/onboarding?step=3');    
     // Make sure "Selanjutnya" button is disabled
     cy.get('.order-1').should('be.disabled');
     // Skip input cv
     cy.get('.mt-4').click();
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=4');
+    cy.url().should('include', '/onboarding?step=4');
 
     // Input current exp
     cy.fillCurrentExpInfoMentee();
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=5');
+    cy.url().should('include', '/onboarding?step=5');
     // Input Mentee Specialization
     cy.addMenteeSpecialization();
 
@@ -145,17 +145,17 @@ describe("Mentee registration flow", () => {
       cy.get('#email').type(dynamicEmail);
     });
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=3');    
+    cy.url().should('include', '/onboarding?step=3');    
     // Make sure "Selanjutnya" button is disabled
     cy.get('.order-1').should('be.disabled');
     // Skip input cv
     cy.get('.mt-4').click();
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=4');  
+    cy.url().should('include', '/onboarding?step=4');  
     // Input current exp
     cy.fillCurrentExpInfoMentee();
     cy.clickContinueBtn();
-    cy.intercept('/onboarding?step=5');
+    cy.url().should('include', '/onboarding?step=5');
     // Input Mentee Specialization
     cy.addMenteeSpecialization();    
     // Input Valid Password
@@ -168,7 +168,7 @@ describe("Mentee registration flow", () => {
     });
     cy.get('#checkPrivacyPolicy').click();
     cy.clickContinueBtn();
-    cy.intercept('/?welcome=true');
+    cy.url().should('include', '/?welcome=true');
     // Should add step to remove currently registered account
   });
 });
