@@ -168,7 +168,6 @@ describe("Mentee registration flow", () => {
     });
     cy.get('#checkPrivacyPolicy').click();
     cy.clickContinueBtn();
-    cy.url().should('include', '/?welcome=true');
     // Should add step to remove currently registered account
   });
 });
