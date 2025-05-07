@@ -8,6 +8,6 @@ module.exports = defineConfig({
   },
 });
 
-module.exports = {
-  defaultCommandTimeout: 8000, // Timeout default 10 detik
-};
+// module.exports = {
+//   defaultCommandTimeout: 8000, // Timeout default 10 detik
+// };
